@@ -558,8 +558,8 @@ class ReferenceSequence():
     #         i += 1
 
     def get_refseq_from_ucsc(self, pos1):
-        spos = pos1['g_spos']-self.opt['margin'] - 500
-        epos = pos1['g_epos']+self.opt['margin'] + 1 + 500
+        spos = pos1['g_spos']-self.opt['margin'] 
+        epos = pos1['g_epos']+self.opt['margin'] + 1
         # seqver = "hg38"
         seqver = self.opt['refversion']
         if not pos1['chrom'].startswith('chr'):
@@ -583,8 +583,8 @@ class ReferenceSequence():
         return refseq
 
     def get_refseq_from_localfasta(self, pos1):
-        spos = pos1['g_spos']-self.opt['margin'] - 500
-        epos = pos1['g_epos']+self.opt['margin'] + 1 + 500
+        spos = pos1['g_spos']-self.opt['margin']
+        epos = pos1['g_epos']+self.opt['margin'] + 1
         seq = self.get_refseq_from_fasta(pos1['chrom'], spos, epos, self.opt['ref_index_rebuild'])
         i = 0
         refseq = {}
